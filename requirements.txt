@@ -18,9 +18,15 @@ langchain-huggingface
 transformers
 huggingface-hub
 
+# PyTorch — local model execution
+torch
+
 #  environment variable management
 python-dotenv
 
 # machine learning utilities
 numpy
 scikit-learn
+
+# groq 
+langchain-groq

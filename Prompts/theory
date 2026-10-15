@@ -1,0 +1,23 @@
+prompts are the input instructions or queries to a given model to guide its output
+
+>> STATIC VS DYNAMIC
+What you are thinking of (Conceptual/Product definition): 
+A static prompt means the prompt is fixed and unchangeable for the user (every user gets the exact same thing). 
+A dynamic prompt means the user has control and changes the input. 
+By this definition, your Streamlit app is definitely dynamic.
+
+What the mentor meant (Code-architecture definition): 
+In that specific part of the video, he was contrasting raw, 
+unstructured user strings (model.invoke(user_input)) against structured, 
+reusable LangChain template objects (PromptTemplate). 
+He loosely called the raw input approach a "static prompt workflow" simply 
+because it lacks a built-in LangChain template structure with validation placeholders.
+
+>> Why use prompt template and not f string
+A PromptTemplate in LangChain is a structured way to create prompts dynamically by inserting variables into a predefined template. 
+Instead of hardcoding prompts, PromptTemplate allows you to define placeholders that can be filled in at runtime with different inputs.
+This makes it reusable, flexible, and easy to manage, especially when working with dynamic user inputs or automated workflows.
+Why use PromptTemplate over f-strings?
+1. Default validation
+2. Reusable
+3. LangChain ecosystem

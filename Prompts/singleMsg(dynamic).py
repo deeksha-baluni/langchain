@@ -68,6 +68,8 @@ input_variables=['paper_input', 'style_input', 'length_input']
 
 )
 
+# this template could be a json too so that i can load it simply
+
 # fill the placeholder
 prompt = template.invoke({
     "paper_input": paper_input,

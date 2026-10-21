@@ -95,3 +95,24 @@ We will be working with LLM where the o/p is either structured or not structured
     1.2 pydanotic
     1.3 json_schema
 
+Typeddict : simple/annotated/optional/literal
+
+pydantic:
+Pydantic is a data validation and data parsing library for Python. It ensures that the data you work with is correct, structured, and type-safe.   
+Unlike basic Python dictionaries or type hints, Pydantic actively validates data at runtime.
+ For example, if a field expects a string and receives something else, Pydantic will raise a validation error rather than letting invalid data slip through.   
+ 
+ Key things Pydantic handles include:
+ 1. Data Validation & Type Coercion: Automatically checks types and converts data when safe (e.g., coercing a valid string number into an integer).  
+
+ 2. Defaults & Optional Fields: Easily define fallback values or optional parameters.   
+ 
+ 3. Field Configurations (Field function): Add constraints (like minimum/maximum values), default values, and rich descriptions for LLMs. 
+ 
+ 3. Object-to-Format Conversion: Returns a robust Pydantic object that can easily be converted to JSON or dictionaries.
+ 
+ >>   How is it different from TypedDict?
+ 
+ Think of TypedDict like a simple blueprint or a label maker for a cardboard box. It tells your code (and your code editor) what keys and types are supposed to be inside a dictionary. However, once you close the box, it doesn’t actually check if what’s inside matches the label. If an LLM gives you a number instead of text, TypedDict just shrugs and lets it through without validating anything at runtime.
+
+On the other hand, Pydantic is like a strict security guard standing at the door of the box. It doesn't just look at the labels—it actively checks, validates, and cleans the data the second it arrives. If something is missing or the wrong data type, Pydantic immediately throws an error to stop bad data from breaking your program. It can even automatically convert (coerce) data types and handle optional fields or default values for you.
